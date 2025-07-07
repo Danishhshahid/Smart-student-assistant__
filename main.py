@@ -26,7 +26,7 @@ async def start():
     )
 
     model = OpenAIChatCompletionsModel(
-        model="meta-llama/llama-3.3-8b-instruct:free",
+        model="meta-llama/llama-4-maverick:free",
         openai_client=client
     )
 
@@ -82,7 +82,7 @@ Always be supportive, clear, and concise. If you don't know something, politely 
 
 @cl.on_message
 async def main(message: cl.Message):
-    thinking_msg = cl.Message(content="🧠 Thinking...")
+    thinking_msg = cl.Message(content="🧠 Thinking...\n")
     await thinking_msg.send()
 
     agent: Agent = cast(Agent, cl.user_session.get("agent"))
